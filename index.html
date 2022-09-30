@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        *{
+            padding:0;
+            margin:0;
+            box-sizing: border-box;
+        }
+
+        .alert{
+            padding:0;
+            display:none;
+            color:red;
+        }
+
+        .result{
+            display:block;
+            color:forestgreen;
+        }
+        .row{
+            margin-right:0;
+            margin-left:0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container p-0 my-3">
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="exercise1-tab" data-toggle="tab" data-target="#exercise1"
+                    type="button" role="tab" aria-controls="exercise1-tab" aria-selected="true">
+                    Exercise 1
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="exercise2-tab" data-toggle="tab" data-target="#exercise2" type="button"
+                    role="tab" aria-controls="exercise2-tab" aria-selected="true">
+                    Exercise 2
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="exercise3-tab" data-toggle="tab" data-target="#exercise3" type="button"
+                    role="tab" aria-controls="exercise3-tab" aria-selected="true">
+                    Exercise 3
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="exercise4-tab" data-toggle="tab" data-target="#exercise4" type="button"
+                    role="tab" aria-controls="exercise4-tab" aria-selected="true">
+                    Exercise 4
+                </button>
+            </li>
+
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+            <div class="tab-pane active" id="exercise1" role="tabpanel" aria-labelledby="exercise1-tab">
+                <div class="form-group mt-3 ">
+                    <div class="row mb-2 justify-content-between">
+                        <label class="col-3 px-0" for="date">Ngày</label>
+                        <label class="col-3 px-0" for="month">Tháng</label>
+                        <label class="col-3 px-0 " for="year">Năm</label>
+                    </div>
+                    <div class="row justify-content-between text-center">  
+                        <input type="number" maxlength="2" step="1" id="date" placeholder="Nhập ngày" class="col-3 form-control">
+                        <input type="number" maxlength="2" step="1" id="month" placeholder="Nhập tháng" class="col-3 form-control">
+                        <input type="number" maxlength="4" step="1" id="year" placeholder="Nhập năm" class="col-3 form-control">
+                    </div>
+                    <div class="row justify-content-between">
+                        <span id="date_alert" class="text-danger col-3 px-0"></span>
+                        <span id="month_alert"class="text-danger col-3 px-0"></span>
+                        <span id="year_alert" class="text-danger col-3 px-0"></span>
+                    </div>
+                    <div class="row justify-content-between my-3">
+                        <button id="daybefore" class="btn btn-danger col-2">Ngày hôm trước</button>
+                        <button id="dayafter"class="btn btn-success col-2">Ngày hôm sau</button>
+                    </div>
+                    <span class="result">
+                        <div class="d-flex justify-content-between row">
+                        <span class="text-success px-0 col-5"></span>
+                        <span class="text-success text-right px-0 col-5"></span>
+                        </div>
+                    </span>
+                    <div class="row">
+                        <span class="alert">
+                            Dữ liệu trống hoặc chưa hợp lệ
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane" id="exercise2" role="tabpanel" aria-labelledby="exercise2-tab">
+                <div class="form-group mt-3 ">
+                    <div class="row mb-2">
+                        <label class="col-3 px-0 mr-5" for="month_ex2">Tháng</label>
+                        <label class="col-3 px-0 " for="year_ex2">Năm</label>
+                    </div>
+                    <div class="row text-center">  
+                        <input type="number" maxlength="2" step="1" id="month_ex2" placeholder="Nhập tháng" class="col-3 mr-5 form-control">
+                        <input type="number" maxlength="4" step="1" id="year_ex2" placeholder="Nhập năm" class="col-3 form-control">
+                    </div>
+                    <div class="row">
+                        <span id="month_alert_ex2"class="text-danger mr-5 col-3 px-0"></span>
+                        <span id="year_alert_ex2" class="text-danger col-3 px-0"></span>
+                    </div>
+                    <div class="row my-3">
+                        <button id="numberOfDay" class="btn btn-success col-2">Số ngày của tháng</button>
+                    </div>
+                    <div class="row">
+                        <span class="result">
+                        </span>
+                    </div>
+                    <div class="row">
+                        <span class="alert col">
+                            Dữ liệu trống.
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane" id="exercise3" role="tabpanel" aria-labelledby="exercise3-tab">
+                <div class="form-group mt-3">
+                    <div class="row align-items-center ">
+                    <label class="col-2 px-0" for="number3Digit">Số nguyên</label>
+                    <span id ="value_number3Digit" class="text-primary col-1"></span>
+                    <input class="col-8 form-control" type="range" step=1 max=999 min=100 name="number3Digit" id="number3Digit">
+                    </div>
+                    <button class="btn btn-success mx-3 d-none"></button>                   
+                    <span class="result"></span>
+                    <span class="alert"></span>
+                </div>
+            </div>
+            <div class="tab-pane" id="exercise4" role="tabpanel" aria-labelledby="exercise4-tab">
+                <div class="form-group mt-3">
+                    <div class="row mb-3">
+                        <span>Học sinh thứ nhất</span>
+                    </div>
+                    <div class="row student_value justify-content-between mb-3">
+                        <input type="text" placeholder="Nhập tên" class="form-control col-5">
+                        <input type="number" placeholder="Nhập toạ độ X" class="form-control col-3">
+                        <input type="number" placeholder="Nhập toạ độ Y" class="form-control col-3">
+                    </div>
+                    <div class="row mb-3">
+                        <span>Học sinh thứ hai</span>
+                    </div>
+                    <div class="row student_value justify-content-between mb-3">
+                        <input type="text" placeholder="Nhập tên" class="form-control col-5">
+                        <input type="number" placeholder="Nhập toạ độ X" class="form-control col-3">
+                        <input type="number" placeholder="Nhập toạ độ Y" class="form-control col-3">
+                    </div>
+                    <div class="row mb-3">
+                        <span>Học sinh thứ ba</span>
+                    </div>
+                    <div class="row student_value justify-content-between mb-3">
+                        <input type="text" placeholder="Nhập tên" class="form-control col-5">
+                        <input type="number" placeholder="Nhập toạ độ X" class="form-control col-3">
+                        <input type="number" placeholder="Nhập toạ độ Y" class="form-control col-3">
+                    </div>
+                    <div class="row mb-3">
+                        <span>Trường học</span>
+                    </div>
+                    <div class="row school_value mb-3">
+                        <input type="number" id="schoolX_coordinate"placeholder="Nhập toạ độ X" class="form-control col-3 mr-5 ">
+                        <input type="number" id="schoolY_coordinate"placeholder="Nhập toạ độ Y" class="form-control col-3">
+                    </div>
+                    
+                    <div class="row">
+                        <button class="btn btn-success mb-3">Kiểm tra toạ độ học sinh</button>
+                    </div>
+                    <div class="row">
+                        <span class="result"></span> 
+                    </div>
+                    <div class="row">
+                        <span class="alert">Dữ liệu còn trống</span>
+                    </div>
+                    
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+        <script src="./javascript/index.js"></script>
+</body>
+
+</html>
